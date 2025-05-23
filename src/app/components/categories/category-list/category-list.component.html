@@ -1,0 +1,6 @@
+<h2>Categorías</h2>
+<div *ngIf="loading">Cargando...</div>
+<ul *ngIf="!loading && items.length > 0">
+  <li *ngFor="let item of items">{{item.categoryId}}----{{ item.name }}</li>
+</ul>
+<div *ngIf="!loading && items.length === 0">No hay datos.</div>

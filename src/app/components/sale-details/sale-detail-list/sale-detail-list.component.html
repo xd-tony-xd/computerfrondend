@@ -1,0 +1,6 @@
+<div *ngIf="loading">Cargando detalles de venta...</div>
+<ul *ngIf="!loading">
+  <li *ngFor="let item of items">
+    {{ item.saleDetailId }} - Cant: {{ item.quantity }} - Precio: ${{ item.unitPrice }}
+  </li>
+</ul>

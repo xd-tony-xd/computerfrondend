@@ -1,0 +1,6 @@
+<div *ngIf="loading">Cargando productos de proveedores...</div>
+<ul *ngIf="!loading">
+  <li *ngFor="let item of items">
+    {{ item.supplierProductId }} - Precio compra: ${{ item.purchasePrice }}
+  </li>
+</ul>

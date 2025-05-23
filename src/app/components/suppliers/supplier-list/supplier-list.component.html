@@ -1,0 +1,6 @@
+<div *ngIf="loading">Cargando proveedores...</div>
+<ul *ngIf="!loading">
+  <li *ngFor="let item of items">
+    {{ item.name }} - {{ item.phone }}
+  </li>
+</ul>

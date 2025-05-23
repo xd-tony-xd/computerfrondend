@@ -1,0 +1,6 @@
+<div *ngIf="loading">Cargando ventas...</div>
+<ul *ngIf="!loading">
+  <li *ngFor="let item of items">
+    {{ item.saleId }} -{{item.customerId}}- {{ item.date }} - Total: ${{ item.total }}
+  </li>
+</ul>
