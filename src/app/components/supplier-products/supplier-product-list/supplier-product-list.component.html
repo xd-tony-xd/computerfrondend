@@ -1,6 +1,20 @@
 <div *ngIf="loading">Cargando productos de proveedores...</div>
-<ul *ngIf="!loading">
-  <li *ngFor="let item of items">
-    {{ item.supplierProductId }} - Precio compra: ${{ item.purchasePrice }}
-  </li>
-</ul>
+
+<table *ngIf="!loading" class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ID Proveedor</th>
+      <th>ID Producto</th>
+      <th>Precio de Compra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.supplierProductId }}</td>
+      <td>{{ item.supplierId }}</td>
+      <td>{{ item.productId }}</td>
+      <td>${{ item.purchasePrice }}</td>
+    </tr>
+  </tbody>
+</table>

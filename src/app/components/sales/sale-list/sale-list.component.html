@@ -1,6 +1,24 @@
 <div *ngIf="loading">Cargando ventas...</div>
-<ul *ngIf="!loading">
-  <li *ngFor="let item of items">
-    {{ item.saleId }} -{{item.customerId}}- {{ item.date }} - Total: ${{ item.total }}
-  </li>
-</ul>
+
+<table *ngIf="!loading" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Sale ID</th>
+      <th>Customer ID</th>
+      <th>User ID</th>
+      <th>Fecha</th>
+      <th>Total</th>
+      <th>Método de Pago</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.saleId }}</td>
+      <td>{{ item.customerId }}</td>
+      <td>{{ item.userId }}</td>
+      <td>{{ item.date }}</td>
+      <td>${{ item.total }}</td>
+      <td>{{ item.paymentMethod }}</td>
+    </tr>
+  </tbody>
+</table>

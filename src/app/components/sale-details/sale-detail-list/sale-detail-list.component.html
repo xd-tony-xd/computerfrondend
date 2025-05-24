@@ -1,6 +1,24 @@
 <div *ngIf="loading">Cargando detalles de venta...</div>
-<ul *ngIf="!loading">
-  <li *ngFor="let item of items">
-    {{ item.saleDetailId }} - Cant: {{ item.quantity }} - Precio: ${{ item.unitPrice }}
-  </li>
-</ul>
+
+<table *ngIf="!loading" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>IdVenta</th>
+      <th>IdProducto</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Precio Unidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.saleDetailId }}</td>
+      <td>{{ item.saleId }}</td>
+      <td>{{ item.product }}</td>
+      <td>${{ item.unitPrice }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>${{ item.unitPrice }}</td>
+    </tr>
+  </tbody>
+</table>

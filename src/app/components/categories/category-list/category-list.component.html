@@ -1,6 +1,23 @@
 <h2>Categorías</h2>
 <div *ngIf="loading">Cargando...</div>
-<ul *ngIf="!loading && items.length > 0">
-  <li *ngFor="let item of items">{{item.categoryId}}----{{ item.name }}</li>
-</ul>
-<div *ngIf="!loading && items.length === 0">No hay datos.</div>
+
+<div *ngIf="!loading && items.length > 0">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.categoryId}}</td>
+        <td>{{item.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!loading && items.length === 0" class="alert alert-info">
+  No hay categorías disponibles.
+</div>

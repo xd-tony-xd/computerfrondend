@@ -1,6 +1,20 @@
 <div *ngIf="loading">Cargando usuarios...</div>
-<ul *ngIf="!loading">
-  <li *ngFor="let item of items">
-    {{ item.name }} - {{ item.email }}
-  </li>
-</ul>
+
+<table *ngIf="!loading" class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.userId }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.role }}</td>
+    </tr>
+  </tbody>
+</table>

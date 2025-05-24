@@ -1,6 +1,33 @@
-<div *ngIf="loading">Cargando clientes...</div>
-<ul *ngIf="!loading">
-  <li *ngFor="let item of items">
-    {{ item.name }} - {{ item.dni }}
-  </li>
-</ul>
+<div *ngIf="loading" class="d-flex align-items-center p-3">
+  <div class="spinner-border text-primary me-2" role="status"></div>
+  <span>Cargando clientes...</span>
+</div>
+
+<div *ngIf="!loading">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>DNI</th>
+          <th>Teléfono</th>
+          <th>Dirección</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{item.customerId}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.dni}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.address}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="items.length === 0" class="alert alert-info mt-3">
+    No se encontraron clientes registrados.
+  </div>
+</div>
